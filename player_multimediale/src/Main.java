@@ -3,7 +3,6 @@ import entities.ElementoMultimediale;
 import entities.Image;
 import entities.Video;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -41,7 +40,7 @@ public class Main {
 
             elementCount++;
 
-            System.out.println("nuovo file aggiunto! [" +  elementCount +"/5]");
+            System.out.println(STR."Nuovo file aggiunto! [\{elementCount}/5]");
         }
 //        ElementoMultimediale el1 = new ElementoMultimediale(title, duration);
         int choose = 1;
