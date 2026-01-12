@@ -3,21 +3,15 @@ package entities;
 import interfaces.Illuminato;
 
 public class Image extends ElementoMultimediale implements Illuminato {
-    private static final Object duration = 0;
     private byte luminosità = 3;
 
     public Image(String title, byte luminosità) {
-        super(title, duration);
+        super(title, 0);
         this.luminosità = luminosità;
     }
 
-
     public Image(String title) {
-        super(title);
-    }
-
-    public byte getDuration() {
-        return duration;
+        super(title, 0);
     }
 
     public byte getLuminosità(){

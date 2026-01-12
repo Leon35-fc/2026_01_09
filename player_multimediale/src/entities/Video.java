@@ -4,26 +4,18 @@ import interfaces.Illuminato;
 import interfaces.Riproducibile;
 
 public class Video extends ElementoMultimediale implements Riproducibile, Illuminato {
-    private String title;
-    private int duration;
     private byte volume = 3;
     private byte luminosità = 3;
 
     public Video(String title, int duration){
-        super(title);
-        this.duration = duration;
+        super(title, duration);
         this.volume = volume;
         this.luminosità = luminosità;
     }
 
     @Override
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
     public void setVolume(byte vol){
-        this.volume = volume;
+        this.volume = vol;
     };
 
     @Override
@@ -33,12 +25,12 @@ public class Video extends ElementoMultimediale implements Riproducibile, Illumi
 
     @Override
     public void alzaVolume(){
-        setVolume(this.volume++);
+        this.volume++;
     }
 
     @Override
     public void abbassaVolume(){
-        setVolume(volume--);
+        this.volume--;
     }
 
     @Override
@@ -62,12 +54,13 @@ public class Video extends ElementoMultimediale implements Riproducibile, Illumi
 
     public String play(){
         String output = "";
-        for (int i = 0; i < duration; i++) {
+        for (int i = 0; i < getDuration(); i++) {
             String str = "";
-            for (byte j = 0; j < volume; i++) {
+            for (byte j = 0; j < getVolume(); j++) {
                 str += "!";
             }
+            return getTitle() + " " + str + " " + show();
         }
-        return output + show();
+        return "Riproduzione terminata";
     }
 }

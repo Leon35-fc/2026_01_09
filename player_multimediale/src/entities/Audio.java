@@ -3,23 +3,10 @@ package entities;
 import interfaces.Riproducibile;
 
 public class Audio extends ElementoMultimediale implements Riproducibile {
-    private String title;
-    private int duration;
     private byte volume = 3;
 
     public Audio(String title, int duration) {
-        super(title);
-        this.duration = duration;
-        this.volume = volume;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    @Override
-    public String getTitle() {
-        return title;
+        super(title, duration);
     }
 
     @Override
@@ -29,28 +16,28 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
 
     @Override
     public void setVolume(byte vol) {
-        this.volume = volume;
+        this.volume = vol;
     }
 
     @Override
     public void alzaVolume() {
-        setVolume(this.volume++);
+        this.volume++;
     }
 
     @Override
     public void abbassaVolume() {
-        setVolume(volume--);
+        this.volume--;
     }
 
     @Override
     public String play() {
         String output = "";
-        for (int i = 0; i < duration; i++) {
+        for (int i = 0; i < getDuration(); i++) {
         String str = "";
-            for (byte j = 0; j < volume; i++) {
+            for (byte j = 0; j < getVolume(); j++) {
                 str += "!";
             }
-            output = title + " " + str;
+            output = getTitle() + " " + str;
         }
             return output;
     }

@@ -1,20 +1,27 @@
 package entities;
 
 public abstract class ElementoMultimediale {
-        private String title;
+    private String title;
+    private int duration;
 
-
-    private byte duration;
-
-        public ElementoMultimediale(String title){
+        public ElementoMultimediale(String title, int duration){
             this.title = title;
+            this.duration = duration;
         }
 
-        public String getTitle() {
+    public ElementoMultimediale(String title) {
+    }
+
+    public String getTitle() {
             return title;
         }
-        
-    public byte getDuration() {
+
+    public int getDuration() {
         return duration;
     }
+
+    public String play(){
+            return title;
+    };
+
 }
