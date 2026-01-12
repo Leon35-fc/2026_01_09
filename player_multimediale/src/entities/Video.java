@@ -52,14 +52,15 @@ public class Video extends ElementoMultimediale implements Riproducibile, Illumi
         return " " + str;
     }
 
+    @Override
     public String play(){
-        String output = "";
-        for (int i = 0; i < getDuration(); i++) {
+        int dur = getDuration();
+        for (byte i = 0; i < dur; i++) {
             String str = "";
             for (byte j = 0; j < getVolume(); j++) {
                 str += "!";
             }
-            return getTitle() + " " + str + " " + show();
+            System.out.println(getTitle() + " " + str + " " + show());
         }
         return "Riproduzione terminata";
     }

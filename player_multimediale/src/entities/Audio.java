@@ -37,8 +37,9 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
             for (byte j = 0; j < getVolume(); j++) {
                 str += "!";
             }
-            output = getTitle() + " " + str;
+//            output = getTitle() + " " + str;
+            System.out.println(getTitle() + " " + str);
         }
-            return output;
+            return "Riproduzione terminata";
     }
 }
