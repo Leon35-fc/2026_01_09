@@ -52,8 +52,10 @@ public class Main {
             if (choose > 0 && choose < 6) {
                 if (elements[choose] instanceof Image) {
                     System.out.println(((Image) elements[choose]).show());
+                } else if (elements[choose] instanceof Audio){
+                    System.out.println(((Audio) elements[choose]).play());
                 } else {
-                    System.out.println(elements[choose].play());
+                    System.out.println(((Video) elements[choose]).play());
                 }
             } else if (choose != 0) {
                 System.out.println("Indice non valido");

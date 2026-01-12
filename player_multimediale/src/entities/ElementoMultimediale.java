@@ -19,9 +19,4 @@ public abstract class ElementoMultimediale {
     public int getDuration() {
         return duration;
     }
-
-    public String play(){
-            return title;
-    };
-
 }
